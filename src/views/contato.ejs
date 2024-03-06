@@ -1,0 +1,66 @@
+<%- include('includes/head') %> <%- include('includes/naav') %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-3">
+      <h1 class="display-1 text-center">Contato</h1>
+      <p class="text-center lead">Crie ou edite seu Contato abaixo</p>
+
+      <%- include('includes/messages') %>
+      <% if(contato.id === user._id) { %> 
+      <form action="/contato/edit/<%= contato._id %>" method="post">
+      <% } else { %>
+      <form action="/contato/register" method="post">
+      <% } %>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+
+        <div class="form-group">
+          <label>Nome</label>
+          <input
+            value="<%= contato.nome  %>"
+            type="text"
+            name="nome"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label>Sobrenome</label>
+          <input
+          value="<%= contato.sobrenome  %>"
+            type="text"
+            name="sobrenome"
+            class="form-control"
+            aria-describedby="emailHelp"
+            placeholder="Enter lastname"
+          />
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input
+          value="<%= contato.email  %>"
+            type="email"
+            name="email"
+            class="form-control"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          />
+        </div>
+        <div class="form-group">
+          <label>Telefone</label>
+          <input
+          value="<%= contato.telefone  %>"
+            type="tel"
+            name="telefone"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter tel"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Editar Contato!</button>
+      </form>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+<%- include('includes/footer') %>
