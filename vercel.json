@@ -8,8 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/src/views/index.ejs"
+      "src": "/login",
+      "dest": "/src/views/login.ejs"
     }
   ]
 }
