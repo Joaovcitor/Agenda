@@ -54,6 +54,7 @@ app.use(MiddlewareGlobal);
 app.use(checkCsrfError);
 app.use(csrfMiddleware);
 app.use(routes);
+app.use(express.static('dest'));
 app.on("Pronto", () => {
   app.listen(3000, () => {
     console.log("Acessar http://localhost:3000");
