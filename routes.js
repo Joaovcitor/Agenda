@@ -9,6 +9,7 @@ const { loginRequired } = require("./src/middlewares/middleware");
 
 // Rotas da home
 route.get("/", loginRequired, homeController.index);
+route.get("/", loginRequired, homeController.home);
 
 // rotas de Login
 
