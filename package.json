@@ -19,7 +19,8 @@
   },
   "scripts": {
     "start": "nodemon server.js --ignore public --ignore frontend",
-    "dev": "webpack -w"
+    "dev": "webpack -w",
+    "build": "npx ejs --compile --watch"
   },
   "name": "pasta5",
   "version": "1.0.0",
